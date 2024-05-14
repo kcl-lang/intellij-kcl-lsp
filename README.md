@@ -6,7 +6,7 @@ Note that this plugin is not available in all versions for some [reasons](https:
 > The integration with the Language Server Protocol is created as an extension to the paid IntelliJ-based IDEs. Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs: IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
-You can try another [basic version plugin]() or use another IDE like VSCode [KCL plugin](https://github.com/kcl-lang/vscode-kcl)
+You can try another [basic version plugin](https://github.com/kcl-lang/intellij-kcl) or use another IDE like VSCode [KCL plugin](https://github.com/kcl-lang/vscode-kcl)
 
 ## Features
 
