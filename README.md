@@ -2,7 +2,7 @@
 
 The KCL IntelliJ IDEA plugin implemmented based on LSP(Language Server Protocol) provides rich language support for the [KCL language](https://kusionstack.io/docs/reference/lang/).
 
-Note that this plugin is not available in all versions for some [reasons](https://plugins.jetbrains.com/docs/intellij/language-server-protocol.html#supported-ides) and does not support all [features](https://plugins.jetbrains.com/docs/intellij/language-server-protocol.html#supported-features)
+Note that this plugin is not available in all versions for some [reasons](https://plugins.jetbrains.com/docs/intellij/language-server-protocol.html#supported-ides) and not support all [features](https://plugins.jetbrains.com/docs/intellij/language-server-protocol.html#supported-features)
 > The integration with the Language Server Protocol is created as an extension to the paid IntelliJ-based IDEs. Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs: IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
