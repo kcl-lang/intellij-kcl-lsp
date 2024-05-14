@@ -1,0 +1,64 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+    <id>io.kusionstack.kcl</id>
+    <name>KCL</name>
+    <category>Languages</category>
+    <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+    <vendor>KusionStack</vendor>
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.ultimate</depends>
+
+    <resource-bundle>messages.ActionsBundle</resource-bundle>
+
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
+    <description>
+        <![CDATA[
+        Adds support for KCL(Kusion Configuration Language). The following features are available for free with IntelliJ IDEA:
+        <br>
+        <ul>
+          <li>Coding assistance (highlighting, formatting, etc.)</li>
+        </ul>
+        <br>
+        Following features requires kcl tool installed:
+        <br>
+        <ul>
+          <li>code formatting</li>
+        </ul>
+        <br>
+
+      ]]>
+    </description>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="KCL File" implementationClass="io.kusionstack.kcl.KCLFileType" fieldName="INSTANCE" language="KCL" extensions="k"/>
+        <lang.parserDefinition language="KCL" implementationClass="io.kusionstack.kcl.KCLParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="KCL" implementationClass="io.kusionstack.kcl.KCLSyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="io.kusionstack.kcl.KCLColorSettingsPage"/>
+        <completion.contributor language="KCL" implementationClass="io.kusionstack.kcl.completion.KCLCompletionContributor"/>
+        <lang.foldingBuilder language="KCL" implementationClass="io.kusionstack.kcl.KCLFoldingBuilder"/>
+        <lang.braceMatcher language="KCL" implementationClass="io.kusionstack.kcl.KCLBraceMatcher"/>
+        <lineIndentProvider implementation="io.kusionstack.kcl.KCLLineIndentProvider"/>
+        <enterBetweenBracesDelegate language="KCL" implementationClass="com.intellij.codeInsight.editorActions.enter.EnterBetweenBracesAndBracketsDelegate"/>
+        <lang.psiStructureViewFactory language="KCL" implementationClass="io.kusionstack.kcl.KCLStructureViewFactory"/>
+        <platform.lsp.serverSupportProvider implementation="io.kusionstack.kcl.KCLLspServerSupportProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- KCL Tools: the pop up action group -->
+        <group id="io.kusionstack.kcl.action.KCLToolsPopUpActionGroup" icon="/icons/file.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="CompareClipboardWithSelection"/>
+            <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="ExternalToolsGroup"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <action id="io.kusionstack.kcl.action.FormatSingleFileAction" class="io.kusionstack.kcl.action.FormatSingleFileAction" icon="/icons/file.svg">
+            </action>
+            <action id="io.kusionstack.kcl.action.FormatDirectoryAction" class="io.kusionstack.kcl.action.FormatDirectoryAction" icon="/icons/file.svg">
+            </action>
+        </group>
+        <group id="io.kusionstack.kcl.group.KCLHelpGroup" popup="true" icon="/icons/file.svg">
+            <action id="io.kusionstack.kcl.action.OpenKCLHelpAction" class="io.kusionstack.kcl.action.OpenKCLHelpAction"
+                    icon="/icons/kusion.svg"/>
+            <add-to-group group-id="HelpMenu" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
